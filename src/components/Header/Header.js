@@ -35,7 +35,7 @@ const Header = () => {
  <Navbar className='nave-bar' bg='dark' variant='dark' style={{height:80}}  >
  <Container  >
     <Navbar.Brand>
-      <a href='/'> Shoping Cart </a>
+      <Link to='/shopify'> Shoping Cart </Link>
     </Navbar.Brand>
 <Navbar.Text>
   <FormControl   onChange={(e)=> productDispatch({
