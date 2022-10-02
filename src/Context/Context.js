@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React from 'react'
-import { cartReducer } from './Reducers';
+import { cartReducer, productReducer } from './Reducers';
 import { createContext, useContext,useEffect,useReducer} from "react";
 
 const  productCart=createContext()
@@ -15,7 +15,13 @@ let localCartItems=JSON.parse(localStorage.getItem('cartItems'))  || [] ;
       cart:localCartItems,
       search:'',
  })
+const [productState,productDispatch]=useReducer(productReducer,{
+  sort:'',
+  search:'',
+  byRating:0,
 
+
+})
   const fetchData=async()=>{
 const res =await axios.get('https://dummyjson.com/products');
   //  console.log(res.data.products)
@@ -40,7 +46,7 @@ const res =await axios.get('https://dummyjson.com/products');
 
 
 
-  return  <productCart.Provider value={{state,dispatch}}   >
+  return  <productCart.Provider value={{state,dispatch ,productDispatch,productState}}   >
              {children}
     </productCart.Provider>
   

@@ -3,11 +3,13 @@ import { CartState } from '../Context/Context'
 import './Cart.css'
 import {useState,useEffect} from 'react'
 import { Scrollbars } from 'react-custom-scrollbars-2';
+import { useNavigate } from 'react-router-dom';
 const Cart = () => {
 
 const {state,dispatch}=CartState()
 // console.log(state.cart)
 const[total,setTotal]=useState(0)
+const navigate=useNavigate()
 
 // const useGetLocalItems=()=>{
 //   let localCart=localStorage.getItem('cartItems')
@@ -55,7 +57,14 @@ useEffect(()=>{
 
   return (
     <div className='cart-wrapper'>
-         
+        <div className="cartstatus" style={{display: 'flex',
+    justifyContent: 'center',fontSize:'2rem'}} >
+      {
+          state.cart.length? <span>Cart Products  </span> : <span>Cart is empty!! Add Products..</span>
+          
+          }
+
+        </div>
       <div className="cart-box">
           <div className="cart-scroll">
       <Scrollbars>
@@ -122,7 +131,7 @@ type:"CLEAR_CART"
 
        </div>
        <div className="check">
-        <button>Check Out</button>
+        <button  onClick={()=>navigate('/')} >Check Out</button>
        </div>
 
 </div>

@@ -14,8 +14,8 @@ function App() {
     <div  style={{display:'flex'}}  className="wrapper-all">
      <Routes>
     
-<Route  path='/'  element={<Home/>} />
-<Route  path='/cart'  element={<Cart/>} />
+            <Route  path='/'  element={<Home/>} />
+            <Route  path='/cart'  element={<Cart/>} />
     
 
      </Routes>

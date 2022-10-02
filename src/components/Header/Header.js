@@ -8,7 +8,7 @@ import { debounce } from 'lodash'
 import { Link } from 'react-router-dom'
 // import { Link } from 'react-router-dom'
 const Header = () => {
-  const {state,dispatch}=CartState();
+  const {state,dispatch , productDispatch}=CartState();
   
 
 
@@ -16,12 +16,18 @@ const Header = () => {
 // const filterProducts= state.products.filter((p)=> p.title.toLowerCase().includes(search.toLowerCase()) )
 
 
-const handelSearch=  debounce((input)=>{
-  dispatch({
-    type:"SEARCH_PRODUCTS",
-    payload:input,
-  })
-},800)
+// const handelSearch=  debounce((input)=>{
+//   dispatch({
+//     type:"SEARCH_PRODUCTS",
+//     payload:input,
+//   })
+// },100)
+// const handelSearch=  debounce((input)=>{
+//   productDispatch({
+//     type:"SEARCH_PRODUCTS",
+//     payload:input,
+//   })
+// },100)
 
 
 
@@ -32,7 +38,10 @@ const handelSearch=  debounce((input)=>{
       <a href='/'> Shoping Cart </a>
     </Navbar.Brand>
 <Navbar.Text>
-  <FormControl   onChange={(e)=>handelSearch(e.target.value)} style={{width:500}}  placeholder='search product ' >
+  <FormControl   onChange={(e)=> productDispatch({
+    type:"SEARCH_PRODUCTS",
+    payload:e.target.value,
+  })} style={{width:500}}  placeholder='search product ' >
 
   </FormControl>
 </Navbar.Text>
