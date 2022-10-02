@@ -131,7 +131,7 @@ type:"CLEAR_CART"
 
        </div>
        <div className="check">
-        <button  onClick={()=>navigate('/')} >Check Out</button>
+        <button  onClick={()=>navigate('/shopify')} >Check Out</button>
        </div>
 
 </div>

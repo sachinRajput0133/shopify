@@ -46,7 +46,7 @@ const Header = () => {
   </FormControl>
 </Navbar.Text>
 <Nav  >
-<Link  to='/cart' align='right'   >
+<Link  to='shopify/cart' align='right'   >
       <Button>
     <FaShoppingCart/>
     <Badge  >{state.cart.length}</Badge>
