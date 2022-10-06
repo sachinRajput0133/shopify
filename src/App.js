@@ -11,7 +11,7 @@ function App() {
      <BrowserRouter>
     
     <Header/>
-    <div  style={{display:'flex'}}  className="wrapper-all">
+    <div  style={{display:'flex',width:"100%",background:"grey"}}  className="wrapper-all">
      <Routes>
     
             <Route  path='shopify/'  element={<Home/>} />

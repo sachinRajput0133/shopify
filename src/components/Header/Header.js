@@ -1,14 +1,14 @@
 import React from 'react'
-import { Badge, Button, Container, Dropdown, FormControl, Nav, Navbar } from 'react-bootstrap'
+import { Badge, Button,  FormControl} from 'react-bootstrap'
 import './Header1.css'
-import {useState , useEffect} from 'react'
+// import {useState , useEffect} from 'react'
 import {FaShoppingCart} from 'react-icons/fa'
 import { CartState } from '../../Context/Context'
-import { debounce } from 'lodash'
+// import { debounce } from 'lodash'
 import { Link } from 'react-router-dom'
 // import { Link } from 'react-router-dom'
 const Header = () => {
-  const {state,dispatch , productDispatch}=CartState();
+  const {state, productDispatch}=CartState();
   
 
 
@@ -32,20 +32,23 @@ const Header = () => {
 
 
   return (
- <Navbar className='nave-bar' bg='dark' variant='dark' style={{height:80}}  >
- <Container  >
-    <Navbar.Brand>
+ <div className='nave-bar' bg='dark' variant='dark' style={{height:80}}  >
+ <div className='container'  >
+    <div>
       <Link to='/shopify'> Shoping Cart </Link>
-    </Navbar.Brand>
-<Navbar.Text>
+    </div>
+    
+      <div className="inpit">
+
   <FormControl   onChange={(e)=> productDispatch({
     type:"SEARCH_PRODUCTS",
     payload:e.target.value,
-  })} style={{width:500}}  placeholder='search product ' >
+  })} style={{maxwidth:500}}  placeholder='search product ' >
 
   </FormControl>
-</Navbar.Text>
-<Nav  >
+      </div>
+
+<div className="logo">
 <Link  to='shopify/cart' align='right'   >
       <Button>
     <FaShoppingCart/>
@@ -57,10 +60,12 @@ const Header = () => {
 
   
 </Link>
-</Nav>
- </Container>
+  
+</div>
 
- </Navbar>
+ </div>
+
+ </div>
   )
 }
 
