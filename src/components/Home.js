@@ -41,11 +41,12 @@ return filterProduct;
 
 
   return (
-    <div className="containerr"style={{display:'flex'}} >
-         <div className="sidebar" style={{display:'flex',flexDirection:'column',width:"20%" ,color:'white',alignItem:'center',padding:'40px 20px',}}>
+    <div className="containerr"style={{display:'flex' ,background:"grey"}} >
+         <div className="sidebar" style={{display:'flex',flexDirection:'column',width:"20%" ,color:'white',alignItem:'center',padding:'40px 20px', }}>
           
-          <div className="wrap" style={{height:'40vh' ,background:'#343a40',padding:'4px ', display:'flex',flexDirection:'column', justifyContent:'space-around'}} >
-            
+          <div className="wrap" style={{padding:"0 10px",backgroundColor:"#343a40"}}  >
+            <div className="filters" style={{height:'40vh' ,background:'#343a40',padding:'4px ', display:'flex',flexDirection:'column', justifyContent:'space-around'}} >
+
           <div>Filter Products</div>
            <Form.Check inline label='Price low to high' name='group1' type='radio' id='inline1'onChange={()=>productDispatch({
             type:"SORT_BY_PRICE",
@@ -73,6 +74,7 @@ return filterProduct;
             
            })}    >Clear Filter</button>
          </div>
+            </div>
           </div>
     
          </div>
