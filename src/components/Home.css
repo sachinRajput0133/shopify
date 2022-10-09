@@ -43,3 +43,19 @@
     color: white;
     
 }
+@media (max-width:500px){
+    .product{
+        /* max-height: 200px; */
+        width: 70%;
+    }
+    .wrap{
+        width: 120px;
+        
+    }
+    .filters{
+        font-size: 12px;
+    }
+    .btn-primary{
+        font-size: 10px;
+    }
+}

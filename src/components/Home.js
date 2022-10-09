@@ -85,6 +85,7 @@ return filterProduct;
 
               return (
                 <div    className="product" key={prod.id}>
+                  
                     <img src={prod.thumbnail} alt={prod.title}  style={{height:'200px',objectFit:'cover'}}/>
                     <div className="description">
                       <span>{prod.title}  </span>

@@ -50,7 +50,7 @@ const Header = () => {
 
 <div className="logo">
 <Link  to='shopify/cart' align='right'   >
-      <Button>
+      <Button  style={{fontSize:"10px"}} >
     <FaShoppingCart/>
     <Badge  >{state.cart.length}</Badge>
 
